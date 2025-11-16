@@ -1,0 +1,473 @@
+authlib, posthog, onnxruntime, huggingface-hub, google-auth, fastapi, tokenizers, opentelemetry-instrumentation, kubernetes, opentelemetry-instrumentation-asgi, opentelemetry-instrumentation-fastapi, chromadb
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+ibm-cloud-sdk-core 3.24.2 requires urllib3<3.0.0,>=2.4.0, but you have urllib3 2.3.0 which is incompatible.
+apache-airflow-core 3.1.1 requires fastapi[standard-no-fastapi-cloud-cli]<0.118.0,>=0.116.0, but you have fastapi 0.115.9 which is incompatible.
+apache-airflow-core 3.1.1 requires packaging>=25.0, but you have packaging 24.2 which is incompatible.
+Successfully installed backoff-2.2.1 bcrypt-5.0.0 build-1.3.0 cachetools-6.2.2 chromadb-1.0.12 coloredlogs-15.0.1 durationpy-0.10 fastapi-0.115.9 filelock-3.20.0 flatbuffers-25.9.23 google-auth-2.43.0 hf-xet-1.2.0 huggingface-hub-1.1.4 humanfriendly-10.0 importlib-resources-6.5.2 kubernetes-34.1.0 mmh3-5.2.0 mpmath-1.3.0 onnxruntime-1.23.2 opentelemetry-instrumentation-0.59b0 opentelemetry-instrumentation-asgi-0.59b0 opentelemetry-instrumentation-fastapi-0.59b0 opentelemetry-util-http-0.59b0 posthog-7.0.1 pyasn1-0.6.1 pyasn1-modules-0.4.2 pypika-0.48.9 pyproject_hooks-1.2.0 requests-oauthlib-2.0.0 rsa-4.9.1 starlette-0.45.3 sympy-1.14.0 tokenizers-0.22.1 typer-slim-0.20.0 urllib3-2.3.0 wrapt-1.17.3
+Defaulting to user installation because normal site-packages is not writeable
+Collecting sentence-transformers==4.1.0
+  Downloading sentence_transformers-4.1.0-py3-none-any.whl.metadata (13 kB)
+Collecting transformers<5.0.0,>=4.41.0 (from sentence-transformers==4.1.0)
+  Downloading transformers-4.57.1-py3-none-any.whl.metadata (43 kB)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.11/dist-packages (from sentence-transformers==4.1.0) (4.67.1)
+Collecting torch>=1.11.0 (from sentence-transformers==4.1.0)
+  Downloading torch-2.9.1-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (30 kB)
+Collecting scikit-learn (from sentence-transformers==4.1.0)
+  Downloading scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+Requirement already satisfied: scipy in /home/theia/.local/lib/python3.11/site-packages (from sentence-transformers==4.1.0) (1.16.0)
+Requirement already satisfied: huggingface-hub>=0.20.0 in /home/theia/.local/lib/python3.11/site-packages (from sentence-transformers==4.1.0) (1.1.4)
+Collecting Pillow (from sentence-transformers==4.1.0)
+  Downloading pillow-12.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+Requirement already satisfied: typing_extensions>=4.5.0 in /usr/local/lib/python3.11/dist-packages (from sentence-transformers==4.1.0) (4.15.0)
+Requirement already satisfied: filelock in /home/theia/.local/lib/python3.11/site-packages (from transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0) (3.20.0)
+Collecting huggingface-hub>=0.20.0 (from sentence-transformers==4.1.0)
+  Downloading huggingface_hub-0.36.0-py3-none-any.whl.metadata (14 kB)
+Requirement already satisfied: numpy>=1.17 in /home/theia/.local/lib/python3.11/site-packages (from transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0) (2.3.1)
+Requirement already satisfied: packaging>=20.0 in /home/theia/.local/lib/python3.11/site-packages (from transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0) (24.2)
+Requirement already satisfied: pyyaml>=5.1 in /usr/local/lib/python3.11/dist-packages (from transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0) (6.0.3)
+Collecting regex!=2019.12.17 (from transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0)
+  Downloading regex-2025.11.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Requirement already satisfied: requests in /usr/local/lib/python3.11/dist-packages (from transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0) (2.32.5)
+Requirement already satisfied: tokenizers<=0.23.0,>=0.22.0 in /home/theia/.local/lib/python3.11/site-packages (from transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0) (0.22.1)
+Collecting safetensors>=0.4.3 (from transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0)
+  Downloading safetensors-0.6.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.11/dist-packages (from huggingface-hub>=0.20.0->sentence-transformers==4.1.0) (2025.10.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /home/theia/.local/lib/python3.11/site-packages (from huggingface-hub>=0.20.0->sentence-transformers==4.1.0) (1.2.0)
+Requirement already satisfied: sympy>=1.13.3 in /home/theia/.local/lib/python3.11/site-packages (from torch>=1.11.0->sentence-transformers==4.1.0) (1.14.0)
+Collecting networkx>=2.5.1 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading networkx-3.5-py3-none-any.whl.metadata (6.3 kB)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.11/dist-packages (from torch>=1.11.0->sentence-transformers==4.1.0) (3.1.6)
+Collecting nvidia-cuda-nvrtc-cu12==12.8.93 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime-cu12==12.8.90 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti-cu12==12.8.90 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cudnn-cu12==9.10.2.21 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cublas-cu12==12.8.4.1 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufft-cu12==11.3.3.83 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-curand-cu12==10.3.9.90 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cusolver-cu12==11.7.3.90 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparse-cu12==12.5.8.93 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparselt-cu12==0.7.1 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl.metadata (7.0 kB)
+Collecting nvidia-nccl-cu12==2.27.5 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_nccl_cu12-2.27.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.0 kB)
+Collecting nvidia-nvshmem-cu12==3.3.20 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_nvshmem_cu12-3.3.20-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.1 kB)
+Collecting nvidia-nvtx-cu12==12.8.90 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink-cu12==12.8.93 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufile-cu12==1.13.1.3 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting triton==3.5.1 (from torch>=1.11.0->sentence-transformers==4.1.0)
+  Downloading triton-3.5.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /home/theia/.local/lib/python3.11/site-packages (from sympy>=1.13.3->torch>=1.11.0->sentence-transformers==4.1.0) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.11/dist-packages (from jinja2->torch>=1.11.0->sentence-transformers==4.1.0) (3.0.3)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.11/dist-packages (from requests->transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.11/dist-packages (from requests->transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /home/theia/.local/lib/python3.11/site-packages (from requests->transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0) (2.3.0)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.11/dist-packages (from requests->transformers<5.0.0,>=4.41.0->sentence-transformers==4.1.0) (2025.10.5)
+Collecting joblib>=1.2.0 (from scikit-learn->sentence-transformers==4.1.0)
+  Downloading joblib-1.5.2-py3-none-any.whl.metadata (5.6 kB)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn->sentence-transformers==4.1.0)
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Downloading sentence_transformers-4.1.0-py3-none-any.whl (345 kB)
+Downloading transformers-4.57.1-py3-none-any.whl (12.0 MB)
+   ━━━━━━━━━━ 12.0/12.0  192.1 MB/s  0:00:00
+              MB                            
+Downloading huggingface_hub-0.36.0-py3-none-any.whl (566 kB)
+   ━━━━━━━━━━ 566.1/566.1 36.9 MB/s  0:00:00
+              kB                            
+Downloading regex-2025.11.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (800 kB)
+   ━━━━━━━━━━ 800.4/800.4 35.0 MB/s  0:00:00
+              kB                            
+Downloading safetensors-0.6.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (485 kB)
+Downloading torch-2.9.1-cp311-cp311-manylinux_2_28_x86_64.whl (899.8 MB)
+   ━━━━━━━━━━━━━━━ 899.8/899.8 MB ?  0:01:02
+Downloading nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl (594.3 MB)
+   ━━━━━━━━━━━ 594.3/594.3 1.9 MB/s  0:00:35
+               MB                           
+Downloading nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (10.2 MB)
+   ━━━━━━━━━━━ 10.2/10.2   7.9 MB/s  0:00:01
+               MB                           
+Downloading nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (88.0 MB)
+   ━━━━━━━━━━ 88.0/88.0   41.3 MB/s  0:00:02
+              MB                            
+Downloading nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (954 kB)
+   ━━━━━━━━━━ 954.8/954.8 18.8 MB/s  0:00:00
+              kB                            
+Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl (706.8 MB)
+   ━━━━━━━━━━━━━━━ 706.8/706.8 MB ?  0:00:47
+Downloading nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (193.1 MB)
+   ━━━━━━━━━━ 193.1/193.1 37.7 MB/s  0:00:05
+              MB                            
+Downloading nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+   ━━━━━━━━━━━ 1.2/1.2 MB 23.0 MB/s  0:00:00
+Downloading nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl (63.6 MB)
+   ━━━━━━━━━━ 63.6/63.6   35.8 MB/s  0:00:01
+              MB                            
+Downloading nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl (267.5 MB)
+   ━━━━━━━━━━ 267.5/267.5 13.1 MB/s  0:00:19
+              MB                            
+Downloading nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (288.2 MB)
+   ━━━━━━━━━━ 288.2/288.2 12.5 MB/s  0:00:20
+              MB                            
+Downloading nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl (287.2 MB)
+   ━━━━━━━━━━ 287.2/287.2 13.6 MB/s  0:00:19
+              MB                            
+Downloading nvidia_nccl_cu12-2.27.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (322.3 MB)
+   ━━━━━━━━━━ 322.3/322.3 14.2 MB/s  0:00:19
+              MB                            
+Downloading nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (39.3 MB)
+   ━━━━━━━━━━ 39.3/39.3   32.1 MB/s  0:00:01
+              MB                            
+Downloading nvidia_nvshmem_cu12-3.3.20-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (124.7 MB)
+   ━━━━━━━━━━ 124.7/124.7 37.2 MB/s  0:00:03
+              MB                            
+Downloading nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (89 kB)
+Downloading triton-3.5.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (170.4 MB)
+   ━━━━━━━━━━ 170.4/170.4 39.4 MB/s  0:00:04
+              MB                            
+Downloading networkx-3.5-py3-none-any.whl (2.0 MB)
+   ━━━━━━━━━━━ 2.0/2.0 MB 29.7 MB/s  0:00:00
+Downloading pillow-12.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.0 MB)
+   ━━━━━━━━━━━ 7.0/7.0 MB 44.0 MB/s  0:00:00
+Downloading scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+   ━━━━━━━━━━━ 9.7/9.7 MB 49.6 MB/s  0:00:00
+Downloading joblib-1.5.2-py3-none-any.whl (308 kB)
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Installing collected packages: nvidia-cusparselt-cu12, triton, threadpoolctl, safetensors, regex, Pillow, nvidia-nvtx-cu12, nvidia-nvshmem-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, networkx, joblib, scikit-learn, nvidia-cusparse-cu12, nvidia-cufft-cu12, nvidia-cudnn-cu12, huggingface-hub, nvidia-cusolver-cu12, transformers, torch, sentence-transformers
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface_hub 1.1.4
+    Uninstalling huggingface_hub-1.1.4:
+      Successfully uninstalled huggingface_hub-1.1.4
+Successfully installed Pillow-12.0.0 huggingface-hub-0.36.0 joblib-1.5.2 networkx-3.5 nvidia-cublas-cu12-12.8.4.1 nvidia-cuda-cupti-cu12-12.8.90 nvidia-cuda-nvrtc-cu12-12.8.93 nvidia-cuda-runtime-cu12-12.8.90 nvidia-cudnn-cu12-9.10.2.21 nvidia-cufft-cu12-11.3.3.83 nvidia-cufile-cu12-1.13.1.3 nvidia-curand-cu12-10.3.9.90 nvidia-cusolver-cu12-11.7.3.90 nvidia-cusparse-cu12-12.5.8.93 nvidia-cusparselt-cu12-0.7.1 nvidia-nccl-cu12-2.27.5 nvidia-nvjitlink-cu12-12.8.93 nvidia-nvshmem-cu12-3.3.20 nvidia-nvtx-cu12-12.8.90 regex-2025.11.3 safetensors-0.6.2 scikit-learn-1.7.2 sentence-transformers-4.1.0 threadpoolctl-3.6.0 torch-2.9.1 transformers-4.57.1 triton-3.5.1
+Defaulting to user installation because normal site-packages is not writeable
+Collecting ibm-watsonx-ai==1.3.24
+  Downloading ibm_watsonx_ai-1.3.24-py3-none-any.whl.metadata (6.7 kB)
+Requirement already satisfied: requests in /usr/local/lib/python3.11/dist-packages (from ibm-watsonx-ai==1.3.24) (2.32.5)
+Requirement already satisfied: httpx<0.29,>=0.27 in /usr/local/lib/python3.11/dist-packages (from ibm-watsonx-ai==1.3.24) (0.28.1)
+Requirement already satisfied: urllib3 in /home/theia/.local/lib/python3.11/site-packages (from ibm-watsonx-ai==1.3.24) (2.3.0)
+Collecting pandas<2.3.0,>=0.24.2 (from ibm-watsonx-ai==1.3.24)
+  Downloading pandas-2.2.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+Requirement already satisfied: certifi in /usr/local/lib/python3.11/dist-packages (from ibm-watsonx-ai==1.3.24) (2025.10.5)
+Collecting lomond (from ibm-watsonx-ai==1.3.24)
+  Downloading lomond-0.3.3-py2.py3-none-any.whl.metadata (4.1 kB)
+Requirement already satisfied: tabulate in /usr/local/lib/python3.11/dist-packages (from ibm-watsonx-ai==1.3.24) (0.9.0)
+Requirement already satisfied: packaging in /home/theia/.local/lib/python3.11/site-packages (from ibm-watsonx-ai==1.3.24) (24.2)
+Collecting ibm-cos-sdk<2.15.0,>=2.12.0 (from ibm-watsonx-ai==1.3.24)
+  Downloading ibm_cos_sdk-2.14.3.tar.gz (58 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Requirement already satisfied: anyio in /usr/local/lib/python3.11/dist-packages (from httpx<0.29,>=0.27->ibm-watsonx-ai==1.3.24) (4.11.0)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.11/dist-packages (from httpx<0.29,>=0.27->ibm-watsonx-ai==1.3.24) (1.0.9)
+Requirement already satisfied: idna in /usr/local/lib/python3.11/dist-packages (from httpx<0.29,>=0.27->ibm-watsonx-ai==1.3.24) (3.11)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.11/dist-packages (from httpcore==1.*->httpx<0.29,>=0.27->ibm-watsonx-ai==1.3.24) (0.16.0)
+Collecting ibm-cos-sdk-core==2.14.3 (from ibm-cos-sdk<2.15.0,>=2.12.0->ibm-watsonx-ai==1.3.24)
+  Downloading ibm_cos_sdk_core-2.14.3.tar.gz (1.1 MB)
+     ━━━━━━━━━━ 1.1/1.1   46.6 MB/s  0:00:00
+                MB                          
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting ibm-cos-sdk-s3transfer==2.14.3 (from ibm-cos-sdk<2.15.0,>=2.12.0->ibm-watsonx-ai==1.3.24)
+  Downloading ibm_cos_sdk_s3transfer-2.14.3.tar.gz (139 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting jmespath<=1.0.1,>=0.10.0 (from ibm-cos-sdk<2.15.0,>=2.12.0->ibm-watsonx-ai==1.3.24)
+  Downloading jmespath-1.0.1-py3-none-any.whl.metadata (7.6 kB)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.9.0 in /usr/local/lib/python3.11/dist-packages (from ibm-cos-sdk-core==2.14.3->ibm-cos-sdk<2.15.0,>=2.12.0->ibm-watsonx-ai==1.3.24) (2.9.0.post0)
+Collecting urllib3 (from ibm-watsonx-ai==1.3.24)
+  Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Requirement already satisfied: numpy>=1.23.2 in /home/theia/.local/lib/python3.11/site-packages (from pandas<2.3.0,>=0.24.2->ibm-watsonx-ai==1.3.24) (2.3.1)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/dist-packages (from pandas<2.3.0,>=0.24.2->ibm-watsonx-ai==1.3.24) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/dist-packages (from pandas<2.3.0,>=0.24.2->ibm-watsonx-ai==1.3.24) (2025.2)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/dist-packages (from python-dateutil<3.0.0,>=2.9.0->ibm-cos-sdk-core==2.14.3->ibm-cos-sdk<2.15.0,>=2.12.0->ibm-watsonx-ai==1.3.24) (1.17.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.11/dist-packages (from requests->ibm-watsonx-ai==1.3.24) (3.4.4)
+Requirement already satisfied: sniffio>=1.1 in /usr/local/lib/python3.11/dist-packages (from anyio->httpx<0.29,>=0.27->ibm-watsonx-ai==1.3.24) (1.3.1)
+Requirement already satisfied: typing_extensions>=4.5 in /usr/local/lib/python3.11/dist-packages (from anyio->httpx<0.29,>=0.27->ibm-watsonx-ai==1.3.24) (4.15.0)
+Downloading ibm_watsonx_ai-1.3.24-py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━ 1.1/1.1 MB 43.1 MB/s  0:00:00
+Downloading jmespath-1.0.1-py3-none-any.whl (20 kB)
+Downloading pandas-2.2.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+   ━━━━━━━━━━ 13.1/13.1  103.4 MB/s  0:00:00
+              MB                            
+Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+Downloading lomond-0.3.3-py2.py3-none-any.whl (35 kB)
+Building wheels for collected packages: ibm-cos-sdk, ibm-cos-sdk-core, ibm-cos-sdk-s3transfer
+  Building wheel for ibm-cos-sdk (pyproject.toml) ... done
+  Created wheel for ibm-cos-sdk: filename=ibm_cos_sdk-2.14.3-py3-none-any.whl size=77324 sha256=5c3e9607570c6116499f1b0fd8fe13f3dd20753682e9e2d9dec7321368ee810d
+  Stored in directory: /home/theia/.cache/pip/wheels/56/fa/85/9a1004ed234750540a7a90f34000bc1208e723f3613eaafc2b
+  Building wheel for ibm-cos-sdk-core (pyproject.toml) ... done
+  Created wheel for ibm-cos-sdk-core: filename=ibm_cos_sdk_core-2.14.3-py3-none-any.whl size=662207 sha256=a8ca778e2e60a3cf0bc39094e1a0b8193d33b49cc13fc2679b959f15d4a81a89
+  Stored in directory: /home/theia/.cache/pip/wheels/96/25/ac/fa87dd4aeda7eba0f3e7e891c52f9c92c8b2ea49963119d9df
+  Building wheel for ibm-cos-sdk-s3transfer (pyproject.toml) ... done
+  Created wheel for ibm-cos-sdk-s3transfer: filename=ibm_cos_sdk_s3transfer-2.14.3-py3-none-any.whl size=90309 sha256=d714dfda0e9078009be791eb561604965a21ccd8a15a14a7b13f86bd6515b4ca
+  Stored in directory: /home/theia/.cache/pip/wheels/c4/03/6f/e85bbf1471a809e7892239f69458cef2cd69ee38fb543339c8
+Successfully built ibm-cos-sdk ibm-cos-sdk-core ibm-cos-sdk-s3transfer
+Installing collected packages: urllib3, lomond, jmespath, pandas, ibm-cos-sdk-core, ibm-cos-sdk-s3transfer, ibm-cos-sdk, ibm-watsonx-ai
+  Attempting uninstall: urllib3
+    Found existing installation: urllib3 2.3.0
+    Uninstalling urllib3-2.3.0:
+      Successfully uninstalled urllib3-2.3.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+kubernetes 34.1.0 requires urllib3<2.4.0,>=1.24.2, but you have urllib3 2.5.0 which is incompatible.
+apache-airflow-core 3.1.1 requires fastapi[standard-no-fastapi-cloud-cli]<0.118.0,>=0.116.0, but you have fastapi 0.115.9 which is incompatible.
+apache-airflow-core 3.1.1 requires packaging>=25.0, but you have packaging 24.2 which is incompatible.
+Successfully installed ibm-cos-sdk-2.14.3 ibm-cos-sdk-core-2.14.3 ibm-cos-sdk-s3transfer-2.14.3 ibm-watsonx-ai-1.3.24 jmespath-1.0.1 lomond-0.3.3 pandas-2.2.3 urllib3-2.5.0
+theia@theia-narendrav64:/home/project$ wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/sN1PIR8qp1SJ6K7syv72qQ/FoodDataSet.json
+--2025-11-16 10:17:37--  https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/sN1PIR8qp1SJ6K7syv72qQ/FoodDataSet.json
+Resolving cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)... 169.63.118.104, 169.63.118.104
+Connecting to cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)|169.63.118.104|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 194981 (190K) [application/json]
+Saving to: 'FoodDataSet.json'
+
+FoodDataSet.   0%       0  --.-KB/s         FoodDataSet. 100% 190.41K  --.-KB/s    in 0.001s  
+
+2025-11-16 10:17:37 (136 MB/s) - 'FoodDataSet.json' saved [194981/194981]
+
+theia@theia-narendrav64:/home/project$ python3.11 interactive_search.py
+python3.11: can't open file '/home/project/interactive_search.py': [Errno 2] No such file or directory
+theia@theia-narendrav64:/home/project$ python3.11 interactive_Search.py
+🍽️  Interactive Food Recommendation System
+==================================================
+Loading food database...
+❌ Error initializing system: name 'load_food_data' is not defined
+if __name__               
+bash: from: command not found*
+bash: food_items: command not found
+bash: syntax error near unexpected token `('
+bash: Main function for interactive CLI food recommendation system: command not found
+bash: try:: command not found
+bash: syntax error near unexpected token `$'"\360\237\215\275\357\270\217  Interactive Food Recommendation System"''
+bash: syntax error near unexpected token `"="'
+bash: syntax error near unexpected token `"Loading food database..."'
+bash: global: command not found
+bash: syntax error near unexpected token `('
+bash: syntax error near unexpected token `$'f"\342\234\205 Loaded {len(food_items)} food items successfully"''
+bash: syntax error near unexpected token `('
+bash: interactive_food_search,: command not found
+bash: {description:: command not found
+bash: syntax error near unexpected token `)'
+bash: syntax error near unexpected token `collection,'
+bash: syntax error near unexpected token `collection'
+bash: except: command not found
+bash: syntax error near unexpected token `$'f"\342\235\214 Error initializing system: {error}"''
+bash: syntax error near unexpected token `('
+bash: Interactive CLI chatbot for food recommendations: command not found
+bash: syntax error near unexpected token `"\n"'
+bash: syntax error near unexpected token `$'"\360\237\244\226 INTERACTIVE FOOD SEARCH CHATBOT"''
+bash: syntax error near unexpected token `"="*50'
+bash: syntax error near unexpected token `"Commands:"'
+bash: syntax error near unexpected token `$'"  \342\200\242 Type any food name or description to search"''
+bash: syntax error near unexpected token `$'"  \342\200\242 \'help\' - Show available commands"''
+bash: syntax error near unexpected token `$'"  \342\200\242 \'quit\' or \'exit\' - Exit the system"''
+bash: syntax error near unexpected token `$'"  \342\200\242 Ctrl+C - Emergency exit"''
+bash: syntax error near unexpected token `"-"'
+bash: syntax error near unexpected token `('
+bash: syntax error near unexpected token `"   Please enter a search term or 'help' for commands"'
+bash: continue: only meaningful in a `for', `while', or `until' loop
+bash: syntax error near unexpected token `in'
+bash: syntax error near unexpected token `$'"\\n\360\237\221\213 Thank you for using the Food Recommendation System!"''
+bash: syntax error near unexpected token `"   Goodbye!"'
+bash: break: only meaningful in a `for', `while', or `until' loop
+bash: syntax error near unexpected token `elif'
+bash: syntax error near unexpected token `else:'
+bash: syntax error near unexpected token `collection,'
+bash: except: command not found
+bash: syntax error near unexpected token `$'"\\n\\n\360\237\221\213 System interrupted. Goodbye!"''
+bash: break: only meaningful in a `for', `while', or `until' loop
+bash: except: command not found
+bash: syntax error near unexpected token `$'f"\342\235\214 Error processing request: {e}"''
+bash: syntax error near unexpected token `('
+bash: Display help information for users: command not found
+bash: syntax error near unexpected token `$'"\\n\360\237\223\226 HELP MENU"''
+bash: syntax error near unexpected token `"-"'
+bash: syntax error near unexpected token `"Search Examples:"'
+bash: syntax error near unexpected token `$'"  \342\200\242 \'chocolate dessert\' - Find chocolate desserts"''
+bash: syntax error near unexpected token `$'"  \342\200\242 \'Italian food\' - Find Italian cuisine"''
+bash: syntax error near unexpected token `$'"  \342\200\242 \'sweet treats\' - Find sweet desserts"''
+bash: syntax error near unexpected token `$'"  \342\200\242 \'baked goods\' - Find baked items"''
+bash: syntax error near unexpected token `$'"  \342\200\242 \'low calorie\' - Find lower-calorie options"''
+bash: syntax error near unexpected token `"\nCommands:"'
+bash: syntax error near unexpected token `$'"  \342\200\242 \'help\' - Show this help menu"''
+bash: syntax error near unexpected token `$'"  \342\200\242 \'quit\' - Exit the system"''
+bash: syntax error near unexpected token `('
+bash: Handle food similarity search with enhanced display: command not found
+bash: syntax error near unexpected token `$'f"\\n\360\237\224\215 Searching for \'{query}\'..."''
+bash: syntax error near unexpected token `"   Please wait..."'
+bash: syntax error near unexpected token `('
+bash: syntax error near unexpected token `$'"\342\235\214 No matching foods found."''
+bash: syntax error near unexpected token `$'"\360\237\222\241 Try different keywords like:"''
+bash: syntax error near unexpected token `$'"   \342\200\242 Cuisine types: \'Italian\', \'Thai\', \'Mexican\'"''
+bash: syntax error near unexpected token `$'"   \342\200\242 Ingredients: \'chicken\', \'vegetables\', \'cheese\'"''
+bash: syntax error near unexpected token `$'"   \342\200\242 Descriptors: \'spicy\', \'sweet\', \'healthy\'"''
+bash: return: can only `return' from a function or sourced script
+bash: syntax error near unexpected token `$'f"\\n\342\234\205 Found {len(results)} recommendations:"''
+bash: syntax error near unexpected token `"="'
+bash: syntax error near unexpected token `result'
+bash: percentage_score: command not found
+bash: syntax error near unexpected token `$'f"\\n{i}. \360\237\215\275\357\270\217  {result[\'food_name\']}"''
+bash: syntax error near unexpected token `$'f"   \360\237\223\212 Match Score: {percentage_score:.1f}%"''
+bash: syntax error near unexpected token `$'f"   \360\237\217\267\357\270\217  Cuisine: {result[\'cuisine_type\']}"''
+bash: syntax error near unexpected token `$'f"   \360\237\224\245 Calories: {result[\'food_calories_per_serving\']} per serving"''
+bash: syntax error near unexpected token `$'f"   \360\237\223\235 Description: {result[\'food_description\']}"''
+bash: syntax error near unexpected token `('
+bash: syntax error near unexpected token `"   "'
+bash: syntax error near unexpected token `"="'
+bash: syntax error near unexpected token `results'
+bash: syntax error near unexpected token `('
+bash: Suggest related searches based on current results: command not found
+bash: syntax error near unexpected token `('
+bash: syntax error near unexpected token `$'"\\n\360\237\222\241 Related searches you might like:"''
+bash: syntax error near unexpected token `print'
+bash: syntax error near unexpected token `('
+bash: syntax error near unexpected token `$'"   \342\200\242 Try \'low calorie\' for lighter options"''
+bash: else:: command not found
+bash: syntax error near unexpected token `$'"   \342\200\242 Try \'hearty meal\' for more substantial dishes"''
+> ^C
+theia@theia-narendrav64:/home/project$ python3.11 interactive_search.py
+python3.11: can't open file '/home/project/interactive_search.py': [Errno 2] No such file or directory
+theia@theia-narendrav64:/home/project$ python3.11 interactive_Search.py
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+🍽️  Interactive Food Recommendation System
+==================================================
+Loading food database...
+Successfully loaded 185 food items from ./FoodDataSet.json
+✅ Loaded 185 food items successfully
+modules.json: 100%|█| 349/349 [00:00<00:00, 
+config_sentence_transformers.json: 100%|█| 1
+README.md: 10.5kB [00:00, 36.9MB/s]
+sentence_bert_config.json: 100%|█| 53.0/53.0
+config.json: 100%|█| 612/612 [00:00<00:00, 5
+model.safetensors: 100%|█| 90.9M/90.9M [00:0
+tokenizer_config.json: 100%|█| 350/350 [00:0
+vocab.txt: 232kB [00:00, 85.9MB/s]
+tokenizer.json: 466kB [00:00, 115MB/s]
+special_tokens_map.json: 100%|█| 112/112 [00
+config.json: 100%|█| 190/190 [00:00<00:00, 2
+Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event CollectionAddEvent: capture() takes 1 positional argument but 3 were given
+Added 185 food items to collection
+
+==================================================
+🤖 INTERACTIVE FOOD SEARCH CHATBOT
+==================================================
+Commands:
+  • Type any food name or description to search
+  • 'help' - Show available commands
+  • 'quit' or 'exit' - Exit the system
+  • Ctrl+C - Emergency exit
+--------------------------------------------------
+
+🔍 Search for food: "chocolate dessert"
+
+🔍 Searching for '"chocolate dessert"'...
+   Please wait...
+Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+
+✅ Found 5 recommendations:
+============================================================
+
+1. 🍽️  Chocolate Lava Cake
+   📊 Match Score: 65.2%
+   🏷️  Cuisine: International
+   🔥 Calories: 400 per serving
+   📝 Description: A decadent dessert with a gooey chocolate center, served warm with a scoop of vanilla ice cream.
+   --------------------------------------------------
+
+2. 🍽️  Chocolate Lava Cake
+   📊 Match Score: 58.5%
+   🏷️  Cuisine: French
+   🔥 Calories: 520 per serving
+   📝 Description: A decadent chocolate cake with a gooey molten chocolate center.
+   --------------------------------------------------
+
+3. 🍽️  Chocolate Cake
+   📊 Match Score: 56.6%
+   🏷️  Cuisine: American
+   🔥 Calories: 450 per serving
+   📝 Description: A rich, moist cake made with high-quality cocoa powder and frosted with creamy chocolate icing.
+   --------------------------------------------------
+
+4. 🍽️  Classic Chocolate Cake
+   📊 Match Score: 56.5%
+   🏷️  Cuisine: American
+   🔥 Calories: 450 per serving
+   📝 Description: A traditional, rich chocolate cake with a smooth, velvety chocolate icing.
+   --------------------------------------------------
+
+5. 🍽️  Brownies
+   📊 Match Score: 52.0%
+   🏷️  Cuisine: American
+   🔥 Calories: 240 per serving
+   📝 Description: A dense, fudgy dessert bar made with chocolate and baked until chewy and moist.
+============================================================
+
+💡 Related searches you might like:
+   • Try 'International dishes' for more International options
+   • Try 'French dishes' for more French options
+   • Try 'American dishes' for more American options
+   • Try 'low calorie' for lighter options
+
+🔍 Search for food: "baked goods"
+
+🔍 Searching for '"baked goods"'...
+   Please wait...
+
+✅ Found 5 recommendations:
+============================================================
+
+1. 🍽️  Banoffee Pie
+   📊 Match Score: 48.5%
+   🏷️  Cuisine: British
+   🔥 Calories: 380 per serving
+   📝 Description: A British dessert made with a digestive biscuit base, topped with bananas, caramel, and whipped cream.
+   --------------------------------------------------
+
+2. 🍽️  Profiteroles
+   📊 Match Score: 46.9%
+   🏷️  Cuisine: French
+   🔥 Calories: 200 per serving
+   📝 Description: French choux pastry balls filled with cream and topped with chocolate sauce.
+   --------------------------------------------------
+
+3. 🍽️  Fruit Tart
+   📊 Match Score: 46.6%
+   🏷️  Cuisine: International
+   🔥 Calories: 280 per serving
+   📝 Description: A dessert consisting of a buttery pastry crust filled with custard or cream and topped with fresh fruits.
+   --------------------------------------------------
+
+4. 🍽️  Bienenstich
+   📊 Match Score: 46.2%
+   🏷️  Cuisine: German
+   🔥 Calories: 300 per serving
+   📝 Description: A German dessert consisting of a yeasted cake topped with a honey almond crunch layer and filled with a vanilla or custard cream.
+   --------------------------------------------------
+
+5. 🍽️  Banoffee Pie
+   📊 Match Score: 46.1%
+   🏷️  Cuisine: British
+   🔥 Calories: 350 per serving
+   📝 Description: A British dessert made with a biscuit or pastry base, topped with bananas, cream, and toffee.
+============================================================
+
+💡 Related searches you might like:
+   • Try 'International dishes' for more International options
+   • Try 'French dishes' for more French options
+   • Try 'British dishes' for more British options
+   • Try 'hearty meal' for more substantial dishes
+
+🔍 Search for food: 
